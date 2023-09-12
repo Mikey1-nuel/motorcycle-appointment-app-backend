@@ -1,19 +1,19 @@
 databases:
-  - name: Budget-app
-    databaseName: budget_app_mvb4
+  - name: motorcycle-appointment
+    databaseName: motorcycle_appointment
     user: 
-budget_app_mvb4_user
+motorcycle_appointment_user
 
 services:
   - type: web
-    name: Budget-app
+    name: motorcycle-appointment
     runtime: ruby
     buildCommand: "./render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: Budget-app
+          name: motorcycle-appointment
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
